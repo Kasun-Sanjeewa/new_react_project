@@ -1,4 +1,7 @@
 import PropTypes, { checkPropTypes } from "prop-types";
+import classnames from "classnames";
+
+
 
 function Button({ children,
     Primary,
@@ -6,14 +9,23 @@ function Button({ children,
     Third,
     rounded,
     outline
+
 }) {
+    const classes = classnames('px-5 py-2 mb-5 ml-5 mt-5 border-solid border-2 rounded-md', {
+
+        'bg-blue-500 border-blue-800 ... text-white font-bold hover:bg-green-500 ... ': Primary,
+        'bg-yellow-500 border-yellow-800 ... text-white font-bold hover:bg-blue-500 ... ': Secondary,
+        'bg-green-500 border-green-800 ... text-white font-bold hover:bg-yellow-500 ... ': Third,
+
+    })
+
     return (
         <div >
-            <button className="bg-green-500 text-white px-5 py-1.5 mb-5 ml-5 mt-5 hover:bg-yellow-300 ... border-solid border-2 border-green-800 ... ">{children}</button>
+            <button className={classes} >{children}</button>
         </div>
     )
 }
-
+//className="bg-green-500     "
 Button.propTypes = {
     checkVariationValue: ({ Primary, Secondary, Third }) => {
         const count = Number(!!Primary) + Number(!!Secondary) + Number(!!Third)

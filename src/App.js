@@ -11,7 +11,7 @@ export default function App() {
             <div><Button Secondary rounded outline>Click Here2</Button></div>
 
 
-            <div><Button Third rounded outline>Click Here2</Button></div>
+            <div><Button Third rounded outline>Click Here3</Button></div>
 
 
         </div>
